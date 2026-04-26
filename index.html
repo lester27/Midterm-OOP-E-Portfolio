@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OOP Portfolio — Lester R. Panganiban</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&family=Playfair+Display:ital,wght@0,900;1,300;1,400&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       STICKY NAVIGATION BAR
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-dot logo-b">L</span><span class="logo-dot logo-r">R</span><span class="logo-dot logo-y">P</span>
+    </div>
+
+    <div class="nav-links-wrapper">
+      <div class="nav-pill" id="navPill"></div>
+      <a class="nav-link active" data-page="home" href="#home">Home</a>
+      <a class="nav-link" data-page="midterm" href="#midterm">Midterm</a>
+      <a class="nav-link" data-page="finals" href="#finals">Finals</a>
+      <a class="nav-link scroll-contact" href="#contact">Contacts</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-signin" onclick="navigateTo('home')">Home</button>
+      <button class="btn-signup" onclick="navigateTo('home'); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior:'smooth'}), 100)">Contact</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PAGE: HOME
+  ============================================================ -->
+  <div id="page-home" class="page active">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">Hi, This is</p>
+          <h1 class="hero-title">Object-Oriented<br /><em>Programming</em><br />Portfolio</h1>
+          <p class="hero-sub">By <strong>Lester R Panganiban</strong></p>
+          <div class="hero-badges">
+            <span class="badge">BSIT 2-4</span>
+            <span class="badge">PUP Manila</span>
+            <span class="badge">Java · OOP</span>
+          </div>
+        </div>
+
+        <div class="hero-avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-ring avatar-ring-2"></div>
+          <div class="profile-pic-placeholder" id="profilePic">
+            <!-- Replace the div below with an <img> tag when you have your photo ready -->
+            <img src="PIC.png" alt="Profile Photo" />
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="nav-cards">
+      <div class="section-label">Explore Portfolio</div>
+      <div class="cards-grid">
+
+        <div class="nav-card" onclick="navigateTo('midterm')">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">Midterms</h2>
+            <p class="card-desc">Activities, Seatworks, Quizzes, Assignments & Exam outputs from the midterm period.</p>
+            <div class="card-stats">
+              <span>14 outputs</span>
+              <span>·</span>
+              <span>5 categories</span>
+            </div>
+          </div>
+          <div class="card-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+
+        <div class="nav-card nav-card-finals" onclick="navigateTo('finals')">
+          <div class="card-glow card-glow-finals"></div>
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">Finals</h2>
+            <p class="card-desc">Check back soon — finals outputs are being prepared and will be uploaded here.</p>
+            <div class="card-stats">
+              <span class="badge-soon">Coming Soon</span>
+            </div>
+          </div>
+          <div class="card-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-bg"></div>
+      <div class="contact-inner">
+        <div class="contact-left">
+          <p class="contact-eyebrow">Get in touch</p>
+          <h2 class="contact-name">Lester R. Panganiban</h2>
+          <p class="contact-school">Polytechnic University of the Philippines</p>
+          <p class="contact-program">BSIT 2-4 Student</p>
+          <a class="contact-email" href="mailto:lesterraz27@gmail.com">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            lesterraz27@gmail.com
+          </a>
+        </div>
+        <div class="contact-right">
+          <div class="contact-card">
+            <div class="contact-avatar">LRP</div>
+            <div>
+              <p class="cc-name">Lester Panganiban</p>
+              <p class="cc-role">OOP Student · Java</p>
+            </div>
+            <div class="contact-links">
+              <a class="cl-btn" href="mailto:lesterraz27@gmail.com" title="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <p>© 2025 Lester R. Panganiban · OOP Portfolio · PUP BSIT 2-4</p>
+      </div>
+    </section>
+
+  </div><!-- end #page-home -->
+
+
+  <!-- ============================================================
+       PAGE: MIDTERM
+  ============================================================ -->
+  <div id="page-midterm" class="page">
+
+    <div class="inner-page-hero">
+      <button class="back-btn" onclick="navigateTo('home')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </button>
+      <div class="inner-hero-text">
+        <p class="inner-eyebrow">Academic Period</p>
+        <h1 class="inner-title">Midterm <span class="title-accent">Outputs</span></h1>
+        <p class="inner-sub">A collection of work submitted during the midterm period of OOP.</p>
+      </div>
+      <div class="inner-hero-bg">
+        <div class="blob blob-mid-1"></div>
+        <div class="blob blob-mid-2"></div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+
+      <!-- Activity — 5 outputs -->
+      <div class="accordion-group">
+        <button class="accordion-trigger" data-group="activity">
+          <div class="acc-left">
+            <span class="acc-icon acc-icon-activity">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <span class="acc-label">Activities</span>
+          </div>
+          <div class="acc-right">
+            <span class="acc-count">5 outputs</span>
+            <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body" id="body-activity">
+          <div class="acc-sub-list">
+            <!-- Activity 1–5 -->
+            <div class="sub-accordion">
+              <button class="sub-trigger">Midterm Activity #1 - Variables <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <img src="Activity1.png" alt="Activity 1" style="width:100%; border-radius:10px;" />
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">Manually tracing how objects like s1, s2, and s3 interact in memory was a real eye-opener for understanding reference variables. Identifying which data stays in the stack versus the heap helped clarify why changing a value through one reference can sometimes affect another. Completing the memory impact tables made abstract concepts of object instantiation and variable assignment feel much more concrete.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Midterm Activity #2 - Operators <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <div class="code-display">
+                    <div class="code-header">
+                      <span class="code-lang">Java</span>
+                      <span class="code-filename">Activity1.java</span>
+                    </div>
+                    <pre><code>public class subTotal {
+	
+	private int productValue;
+	private boolean couponSwitch;
+	
+	public subTotal (int productValue, int productAmount, boolean couponSwitch) {
+		this.productValue = productValue*productAmount;
+		
+		if (productValue > 50) {
+			this.productValue = this.productValue++ + ++this.productValue; // add tax
+		}
+		else if (productValue < 50) {
+			this.productValue = this.productValue-- + --this.productValue; // add discount
+		}
+		
+		if (productValue > 20) { // coupon eligibility
+			this.couponSwitch = true; 
+		}
+		else {
+			this.couponSwitch = false;
+		}
+	}
+	
+	public void displayReciept () { // displays the total for each
+		System.out.println(productValue + "," + couponSwitch);
+	}
+	
+	public void addAmount (int amountAdd) { // adds amount to total
+		this.productValue += amountAdd;
+	}
+	
+	public void subtractAmount (int amountSubtract) { // subtracts amount to total
+		this.productValue -= amountSubtract;
+	}
+	
+	public void resetTotal() { // resets the total amount
+		this.productValue = this.productValue ^ this.productValue;
+	}
+	
+
+	public static void main(String[] args) {
+		
+		subTotal c1 = new subTotal (100, 2, false);
+		subTotal c2 = new subTotal (10, 1, false);
+		subTotal c3 = new subTotal (25, 9, false);
+		subTotal c4 = new subTotal (4, 1, false);
+		
+		subTotal[] customers = {c1, c2, c3, c4};
+		
+		c1.addAmount(100);	// c1 decided to add products
+		c3.subtractAmount(9);	// c3 took away products
+		c2.subtractAmount(6); // c2 took away products
+		c4.subtractAmount(3); // c4 took away products
+		
+		for (subTotal current : customers) {
+			if (current.productValue <= 5) {
+				current.resetTotal();
+			}
+		}
+		
+		System.out.println("Subtotals " + "-" + " with Coupons");
+		c1.displayReciept();
+		c2.displayReciept();
+		c3.displayReciept();
+		c4.displayReciept();
+	}
+                    }</code></pre>
+                    </div>
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">This activity pushed my understanding of Java's diverse operator set, particularly with the more "tricky" bitwise and ternary expressions. Managing assignment and unary operators in complex statements like a++ + ++a required a high level of focus to ensure the output matched the expected logic exactly. It was a comprehensive exercise that reinforced the importance of operator precedence and the specific behavior of different data types during computation.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Midterm Activity #3 ATM with Transfer Feature <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <div class="code-display">
+                    <div class="code-header">
+                      <span class="code-lang">Java</span>
+                      <span class="code-filename">Activity1.java</span>
+                    </div>
+                    <pre><code>import java.util.Scanner;
+
+public class ATMWithdrawalLimit {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int initialBalance = 9000;
+		int choice = 0;
+		int deposit = 0;
+		int withdraw = 0;
+		
+		do {
+			System.out.println("===== ATM MENU =====");
+			System.out.println("1. Check Balance");
+			System.out.println("2. Deposit");
+			System.out.println("3. Withdraw");
+			System.out.println("4. Exit");
+			System.out.println("Enter choice: ");
+			choice = input.nextInt();
+		
+			switch (choice) {
+			case 1:
+				System.out.println("Your remaining balance is: " + initialBalance);
+				break;
+			
+			case 2:
+				System.out.println("Input deposit amount: ");
+				deposit = input.nextInt();
+				if (deposit > 0) {
+					initialBalance += deposit;
+					System.out.println("Your new balance is: " + initialBalance);
+				}else {
+					System.out.println("Invalid Input");
+					break;
+				}
+				break;
+				
+			case 3:
+				System.out.println("Input withdrawal amount: ");
+				withdraw = input.nextInt();
+				if (withdraw > 3000) {
+					System.out.println("Withdrawal Limit Exceeded");
+					break;
+				}else {
+					initialBalance -= withdraw;
+					System.out.println("Your new balance is: " + initialBalance);
+				}
+				break;
+			
+			case 4:
+				System.out.println("Exiting program...");
+				break;
+			}	
+				
+		} while (choice != 4);
+
+	}
+                  }</code></pre>
+                  </div>
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">This project was a great practical application of using switch statements and do-while loops to create a functional user interface. Implementing the 3,000-peso withdrawal limit taught me how to integrate specific business rules directly into the program logic using if-else structures. It was satisfying to see the theoretical concepts of control flow come together in a simulation that mirrors a real-world system.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Midterm Activity #4 Student Library Borrowing System with Penalty Counter <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <div class="code-display">
+                    <div class="code-header">
+                      <span class="code-lang">Java</span>
+                      <span class="code-filename">Activity1.java</span>
+                    </div>
+                    <pre><code>import java.util.Scanner;
+
+public class StudentPaymentSystemPanganiban {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+		String studentName = "";
+		int studentID = 0;
+		int totalTuition = 0;
+		int choice = 0;
+		int payment = 0;
+		int counter = 0;
+		int discountCheck = 0;
+		int discount = 0;
+		
+		System.out.println("Input Student Name: ");
+		studentName = input.nextLine();
+		System.out.println("Input Student ID: ");
+		studentID = input.nextInt();
+		System.out.println("Input Tuition amount: ");
+		totalTuition = input.nextInt();
+		
+		do {
+			System.out.println("===== PAYMENT MENU =====");
+			System.out.println("1. Pay Tuition");
+			System.out.println("2. Check Balance");
+			System.out.println("3. Apply Discount");
+			System.out.println("4. Exit");
+			System.out.println("Enter choice: ");
+			choice = input.nextInt();
+			
+			switch (choice) {
+			case 1:
+				System.out.println("Input payment amount: ");
+				payment = input.nextInt();
+				if (payment > totalTuition) {
+					System.out.println ("Invalid payment");
+				}else {
+					totalTuition -= payment;
+					System.out.println("Success!");
+					if (totalTuition == 0) {
+						System.out.println("Success! No remaining balance");
+					}
+				}
+				++counter;
+				break;
+				
+			case 2:
+				System.out.println("Your balance amount: " + totalTuition);
+				++counter;
+				break;
+				
+			case 3:
+				if (discountCheck == 0) {
+				System.out.println("Are you a Regular Student(1) or a Scholar(2): ");
+				discount = input.nextInt();
+					if (discount == 1) {
+						System.out.println("No discount applied");
+					}else if (discount == 2) {
+						System.out.println("Discount applied");
+						totalTuition -= (totalTuition * 0.20);
+					}
+				}else {
+					System.out.println("You have already claimed the discount");
+				}
+				break;
+				
+			case 4:
+				System.out.println("Student Name: " + studentName);
+				System.out.println("Total Transactions: " + counter);
+				System.out.println("Final Balance: " + totalTuition);
+				System.out.println("Exiting program...");
+				break;
+			}
+			
+		}while (choice != 4);
+
+	}
+                  }</code></pre>
+                  </div>
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">Developing this system helped me understand how to manage more complex state transitions, like tracking transaction counts and preventing multiple discount applications. Using nested if statements for input validation ensured the program remained robust, especially when handling financial calculations like tuition balances. The requirement to handle different student roles, such as scholars versus regular students, added a layer of logic that made the coding process much more engaging.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Midterm Activity #5: Personal Expense Tracker <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <div class="code-display">
+                    <div class="code-header">
+                      <span class="code-lang">Java</span>
+                      <span class="code-filename">Activity1.java</span>
+                    </div>
+                    <pre><code>package activities;
+import java.util.Scanner;
+
+public class ExpenseTrackerPanganiban {
+	
+	public static int computeExpenses(int transportation, int food, int electricity, int other) {
+		return (transportation + food + electricity + other);
+	}
+	
+	public static String exceedChecker(int total, int budget) {
+		
+		if (total > budget) {
+			return "The budget cannot hold expenses";
+		}
+		else {
+			return"The budget can accomodate the expenses!";
+		}
+		
+	}
+	
+	public static void displayTitle() {
+		System.out.println("Personal Expense Tracker");
+	}
+	
+	public static void displayTotal(int totalExpense, int budgetStatus, int remainingBudget) {
+		System.out.println("Your total expenses is: " + totalExpense);
+		System.out.println("Your total budget is: " + budgetStatus);
+		System.out.println("Your remaining budget is: " + remainingBudget);
+	}
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		int budget = 0;
+		int transportation = 0;
+		int food = 0;
+		int electricity = 0;
+		int other = 0;
+		int total = 0;
+		int remainingBudget = 0;
+		
+		
+		displayTitle();
+
+		System.out.println("Please input your budget: ");
+		budget = input.nextInt();
+			
+		System.out.println("=== Expenses ===");
+		System.out.println("Transportation:");
+		transportation = input.nextInt();
+			
+		System.out.println("Food:");
+		food = input.nextInt();
+			
+		System.out.println("Elextricity:");
+		electricity = input.nextInt();
+			
+		System.out.println("Other expenses:");
+		other = input.nextInt();
+		
+		total = computeExpenses(transportation, food, electricity, other);
+			
+		System.out.println(exceedChecker(total, budget));
+		
+		remainingBudget = budget - total;
+			
+		displayTotal(total, budget, remainingBudget);
+			
+	}
+
+                  }</code></pre>
+                  </div>
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">Focusing on modularity through user-defined methods made this activity stand out, as it forced me to think about how information flows between void and non-void functions. Calculating expenses and comparing them against a budget taught me how to return meaningful strings and data back to the main method for a clean final output. Adding personal enhancements, like tracking extra categories or calculating the remaining budget, allowed me to put a unique spin on the assignment.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seatwork — 2 outputs -->
+      <div class="accordion-group">
+        <button class="accordion-trigger" data-group="seatwork">
+          <div class="acc-left">
+            <span class="acc-icon acc-icon-seatwork">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </span>
+            <span class="acc-label">Seatwork</span>
+          </div>
+          <div class="acc-right">
+            <span class="acc-count">2 outputs</span>
+            <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body" id="body-seatwork">
+          <div class="acc-sub-list">
+            <div class="sub-accordion">
+              <button class="sub-trigger">Seatwork 1 Increment and Decrement <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <div class="attachment-zone">
+                    <div class="attach-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
+                    <p class="attach-placeholder-text">Seatwork is yet to be returned </p>
+                    <span class="attach-placeholder-note">— Please wait for further updates! —</span>
+                  </div>
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">This seatwork was a real test of logic, specifically in distinguishing how the timing of prefix and postfix operators affects a variable's value in real-time. Manually tracing the outputs taught me to be more meticulous with how I read expressions, as even a single ++ or -- position can completely change the final result. It was a challenging but necessary exercise to sharpen my debugging skills and mental execution of Java code.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Seatwork 2 Condional Statements Coding on Paper <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <div class="attachment-zone">
+                    <div class="attach-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
+                    <p class="attach-placeholder-text">Seatwork is yet to be returned</p>
+                    <span class="attach-placeholder-note">— Please wait for further updates! —</span>
+                  </div>
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">Writing out logic by hand forced me to think through the structure of if-else blocks and switch statements without the safety net of an IDE's auto-correct. It deepened my understanding of how to control program flow effectively, ensuring that every possible condition is accounted for and logically sound. This exercise really emphasized the importance of planning out my codes decision-making process before I even touch a keyboard.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz — 4 outputs (PENDING) -->
+      <div class="accordion-group">
+        <button class="accordion-trigger" data-group="quiz">
+          <div class="acc-left">
+            <span class="acc-icon acc-icon-quiz">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </span>
+            <span class="acc-label">Quiz</span>
+          </div>
+          <div class="acc-right">
+            <span class="acc-count">4 outputs</span>
+            <span class="badge-pending">Pending</span>
+            <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body" id="body-quiz">
+          <div class="acc-sub-list">
+            <div class="sub-accordion">
+              <button class="sub-trigger">Quiz 1 <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body"><div class="pending-state"><div class="pending-icon">⏳</div><h3>Pending</h3><p>This quiz output has not been uploaded yet.</p></div></div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Quiz 2 <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body"><div class="pending-state"><div class="pending-icon">⏳</div><h3>Pending</h3><p>This quiz output has not been uploaded yet.</p></div></div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Quiz 3 <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body"><div class="pending-state"><div class="pending-icon">⏳</div><h3>Pending</h3><p>This quiz output has not been uploaded yet.</p></div></div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Quiz 4 <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body"><div class="pending-state"><div class="pending-icon">⏳</div><h3>Pending</h3><p>This quiz output has not been uploaded yet.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assignment — 2 outputs -->
+      <div class="accordion-group">
+        <button class="accordion-trigger" data-group="assignment">
+          <div class="acc-left">
+            <span class="acc-icon acc-icon-assign">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            <span class="acc-label">Assignment</span>
+          </div>
+          <div class="acc-right">
+            <span class="acc-count">2 outputs</span>
+            <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body" id="body-assignment">
+          <div class="acc-sub-list">
+            <div class="sub-accordion">
+              <button class="sub-trigger">Assignment 1 Introduction to Java <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <img src="Midterm Assignment 1_Panganiban_Lester.png" alt="Activity 1" style="width:100%; border-radius:10px;" />
+                  <img src="Midterm Assignment 1_Panganiban_Lester (1).png" alt="Activity 1" style="width:100%; border-radius:10px;" />
+                  <img src="Midterm Assignment 1_Panganiban_Lester (2).png" style="width:100%; border-radius:10px;" />
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">Diving into the distinctions between the JDK, JRE, and JVM provided a necessary roadmap for how our development environment actually functions. Learning about Java’s key features, like its robust security and object-oriented nature, highlighted why it’s so effective for building scalable applications. It was a great way to ground our theoretical knowledge before moving into more complex coding implementations.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-accordion">
+              <button class="sub-trigger">Assignment 2 About Me <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="output-layout">
+                  <img src="About Me_Panganiban_Lester.png" alt="Activity 1" style="width:100%; border-radius:10px;" />
+                  <div class="reflection-zone">
+                    <label class="reflection-label">Reflection</label>
+                    <div class="reflection-box reflection-placeholder">
+                      <span class="reflection-placeholder-text">Reflecting on my own identity through this activity helped me see how my experience in graphic design and visual arts can complement my technical path. It gave me a chance to express my specific excitement for upcoming topics while establishing a direct line of communication with the professor. Overall, it was a helpful exercise in aligning my personal interests with my academic goals for the semester.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam — 1 output (PENDING) -->
+      <div class="accordion-group">
+        <button class="accordion-trigger" data-group="exam">
+          <div class="acc-left">
+            <span class="acc-icon acc-icon-exam">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <span class="acc-label">Exam</span>
+          </div>
+          <div class="acc-right">
+            <span class="acc-count">1 output</span>
+            <span class="badge-pending">Pending</span>
+            <svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body" id="body-exam">
+          <div class="acc-sub-list">
+            <div class="sub-accordion">
+              <button class="sub-trigger">Midterm Exam <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="sub-body">
+                <div class="pending-state">
+                  <div class="pending-icon">⏳</div>
+                  <h3>Pending</h3>
+                  <p>Exam output has not been uploaded yet. Check back soon.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end .accordion-container -->
+
+    <footer class="inner-footer">
+      <p>Lester R. Panganiban · PUP BSIT 2-4 · OOP Portfolio</p>
+    </footer>
+
+  </div><!-- end #page-midterm -->
+
+
+  <!-- ============================================================
+       PAGE: FINALS
+  ============================================================ -->
+  <div id="page-finals" class="page">
+    <div class="finals-bg">
+      <div class="finals-blob finals-blob-1"></div>
+      <div class="finals-blob finals-blob-2"></div>
+      <div class="finals-blob finals-blob-3"></div>
+    </div>
+
+    <button class="back-btn back-btn-finals" onclick="navigateTo('home')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </button>
+
+    <div class="finals-content">
+      <p class="finals-oops">oops..</p>
+      <div class="finals-loading-wrap">
+        <h2 class="finals-loading">Finals are loading</h2>
+        <h1 class="finals-soon">SOON</h1>
+      </div>
+      <div class="finals-dots">
+        <span class="fdot"></span>
+        <span class="fdot"></span>
+        <span class="fdot"></span>
+      </div>
+    </div>
+  </div><!-- end #page-finals -->
+
+  <script src="script.js"></script>
+</body>
+</html>
