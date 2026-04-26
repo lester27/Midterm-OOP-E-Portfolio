@@ -1169,3 +1169,13 @@ body {
   line-height: 1.7;
   white-space: pre;
 }
+
+.hero-intro {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+  max-width: 480px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s var(--ease-out) 0.65s forwards;
+}
